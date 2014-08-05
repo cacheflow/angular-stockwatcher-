@@ -1,10 +1,19 @@
-<h1>Watchlist#index</h1>
+<h1>Watchlist</h1>
+
+<div ng-controller="StocksCtrl">
 
 <form>
-<input type="text" ng-model="newSymbol" placeholder="Enter a symbol">
-<input type= "submit" value="Add"> 
+<select ui-select2= "select20options" ng-model= "newCompany", data-placeholder="Enter the name of the company you're searching for", ng-required="true"></select> 
+<option value=""></option>
+<option ng-repeat="stock in stocklist" value= ""></option>
+</select> 
 
 </form>
+
+<div ng-show="loading" id="loading">
+	Loading, please wait. 
+
+</div>
 
 <div ng-show = "error">
 	There was a problem with the Yahoo Finance API. Please try again later. 
@@ -17,8 +26,26 @@
 	
 <li ng-repeat = "stock in stocks"> 
 
-{{stock.symbol}}, {{stock.name}}
-<a href = "" ng-click="deleteStock(stock.id $index)"> Delete </a>
+<div id = "symbol">
+	
+
+</div>
+
+<div id="name"> 
+
+</div>
+
+<span>Bid:</span>,
+<span>Ask:</span>,
+<span>Year Low:</span>,
+<span>Year High:</span>,
+
+<div id = "links"> 
+<a href="" ng-click="updateStock(stock.id, $index)">Update</a>
+
+<a href = "" ng-click="deleteStock(stock.id $index)" id="delete"> Delete </a>
+
+</div>
 
 </li>
 
