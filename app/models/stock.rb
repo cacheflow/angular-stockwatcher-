@@ -1,2 +1,2 @@
-class Stock < ActiveRecord::Base
+class Stock < ActiveRecord::Base 
 end
