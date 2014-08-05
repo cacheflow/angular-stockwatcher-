@@ -39,28 +39,30 @@ $scope.stocklist = [{symbol: "AAPL", name: "Apple Inc"},
 				   {symbol: "MSFT", name: "Microsoft Inc"}]
 
 
-$scope.createStock = function(){
-	var attr = {};
-	attr.symbol = $filter("uppercase")($scope.newSymbol); 
-	$http({method: GET, url: "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20WHERE%20symbol%3D" + "" + attr.symbol+ "'" + "&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys"
-}).success(function(data, status, headers, config) {
-	$scope.error = false; 
-	attr.name = data.query.results.quote["Name"];
-	attr.bid = data.query.results.quote["Bid"];
-	attr.ask = data.query.results.quote["Ask"];
-	attr.year_low = data.query.results.quote["YearLow"];
-	attr.year_high = data.query.results.quote["YearHigh"];
-	var newStock = Stock.create(attr);
-	$scope.stocks.push(newStock); 
-	$scope.newCompany = "";
-	$scope.loading = false; 
-}).error(function(data, status, headers, config) {
-	$scope.error = true; 
-	$scope.loading = false; 
-});
+$scope.createStock = function() {
+	$scope.fetchYahooFinanceData($filter("uppercase")($scope.newCompany)).then(function(result){
+		$scope.error = false; 
+		$scope.stocks.push(Stock.create(result));
+		$scope.newCompany = ''; 
+	},
+		function(error){
+			$scope.error = true; 
+	});
 };
 
+$scope.updateStock = function(id, idx){
+	var stock = $scope.stocks[idx];
+	$scope.fetchYahooFinanceData(stock.symbol).then(function(result) {
+	$scope.error = false; 
+	result.id = stock.id; 
+	Stock.update(result); 
+	$scope.stocks[idx] = result; 
+	}, function(error) {
+		$scope.error = true; 
 
+
+	});
+};
 
 
 

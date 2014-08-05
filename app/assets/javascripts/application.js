@@ -12,6 +12,7 @@
 //= require jquery 
 //= require select2
 //= require angular
+//= require highstock
 //= require angular-resource
 //= require main.js
 //= require_tree ./angular
