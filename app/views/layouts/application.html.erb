@@ -16,14 +16,11 @@
 
 <div ng-controller="StocksCtrl">
 <ul>
-	<li ng-repeat="stock in stocks">
-		{{stock.symbol}}, {{stock.name}}
-		<a href="" ng-click="deleteStock($index)">Delete</a>
+<li ng-repeat="stock in stocks">
+{{stock.symbol}}, {{stock.name}}
+<a href="" ng-click="deleteStock($index)">Delete</a>
 
-	</li>
-		</ul>
-
-
+</li>
 </ul>
 
 {{newSymbol}}
