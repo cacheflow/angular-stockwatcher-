@@ -1,31 +1,12 @@
 <!DOCTYPE html>
-<html ng-app = "StockWatch">
+<html ng-app="StockWatch">
 <head>
   <title>Stockwatch</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag  "application" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<h1>Watchlist</h1>
-
-<form> 
-<input type="text" ng-model="newSymbol" placeholdeer = "Enter a symbol">
-<input type = "submit" value="Add"> 
-</form>
-
-<div ng-controller="StocksCtrl">
-<ul>
-<li ng-repeat="stock in stocks">
-{{stock.symbol}}, {{stock.name}}
-<a href="" ng-click="deleteStock(stock.idm $index)">Delete</a>
-
-</li>
-</ul>
-</div>
-
-{{newSymbol}}
-
 
 <%= yield %>
 

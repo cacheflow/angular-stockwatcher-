@@ -3,7 +3,7 @@
 <div ng-controller="StocksCtrl">
 
 <form>
-<select ui-select2= "select20options" ng-model= "newCompany", data-placeholder="Enter the name of the company you're searching for", ng-required="true"></select> 
+<input type = "hidden" select ui-select2= "select20options" ng-model= "newCompany", data-placeholder="Enter the name of the company you're searching for", ng-required="true"></select> 
 <option value=""></option>
 <option ng-repeat="stock in stocklist" value= ""></option>
 </select> 
@@ -41,11 +41,20 @@
 <span>Year High:</span>,
 
 <div id = "links"> 
+Show Chart: <input type="checkbox" ng-model="showStockChart">
 <a href="" ng-click="updateStock(stock.id, $index)">Update</a>
 
 <a href = "" ng-click="deleteStock(stock.id $index)" id="delete"> Delete </a>
 
 </div>
+
+<div my-chart stockid="stock.id" stocksymbol="stock.symbol" stockname="stock.name" ng-show="showStockChart" id="chart" style="padding-right: 30px; padding-left: 20px; padding-top: 15px;">
+	
+<div id = "loading_chart"> 
+Loading chart, this may take awhile.
+</div>
+</div>
+
 
 </li>
 

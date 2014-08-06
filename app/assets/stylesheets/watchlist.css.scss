@@ -1,3 +1,98 @@
 // Place all the styles related to the watchlist controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  font-size: 12px;
+  font-family: Helvetica, sans-serif;
+  background-color: #ddd;
+  margin: 0px;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  margin-left: 20px;
+}
+
+form input[type='submit'] {
+  -webkit-appearance: caret;
+          font-size: 12px;
+    font-size: 12px;
+    // padding: 5px 10px 6px 10px;
+    font-weight: bold;
+    border: 1px solid #466A98;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    color: #FFF;
+    background: #24882B;
+    background: -webkit-gradient(linear, left top, left bottom, from(#32BE39), to(#247B28));
+    background: -moz-linear-gradient(top,  #32BE39,  #247B28);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#32BE39', endColorstr='#247B28');
+    text-decoration: none;
+    text-shadow: 0 -1px 0 #036;
+    text-align: middle;
+    vertical-align: top;
+}
+
+ul {
+  list-style-type: none;
+  padding-right: 40px;
+}
+
+li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  border: 1pt solid #ccc;
+  background: #eeeeee; /* Old browsers */
+  background: -moz-linear-gradient(top,  #eeeeee 0%, #eeeeee 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#eeeeee)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #eeeeee 0%,#eeeeee 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #eeeeee 0%,#eeeeee 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #eeeeee 0%,#eeeeee 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #eeeeee 0%,#eeeeee 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+  
+  span {
+    font-weight: bold;
+    color: #DB7878;
+  }
+}
+
+
+#symbol {
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+#delete {
+  padding-left: 15px;
+}
+
+#loading {
+  padding-left: 20px;
+  padding-top: 5px;
+}
+
+#links {
+  display: inline;
+  position: relative;
+  margin-top: -10px;
+  font-weight: bold;
+  float: right;
+  padding-right: 10px;
+}
+
+#loading_chart {
+  text-align: center;
+  width: 100%;
+  margin-top: -60px;
+  padding-bottom: 20px;
+  font-size: 11pt;
+  color: #3d3d5c;
+  text-decoration: underline;
+}
